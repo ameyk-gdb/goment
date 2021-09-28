@@ -3,7 +3,7 @@ package goment
 import (
 	"errors"
 	"time"
-
+	"log"
 	"github.com/nleeper/goment/locales"
 )
 
@@ -31,7 +31,7 @@ type DateTime struct {
 func New(args ...interface{}) (*Goment, error) {
 	loadParseReplacements()
 	loadFormatReplacements()
-
+	log.Println("amey1")
 	switch len(args) {
 	case 0:
 		return fromNow()
@@ -82,6 +82,7 @@ func New(args ...interface{}) (*Goment, error) {
 
 // Unix creates an instance of the Goment library from the Unix timestamp (seconds since the Unix Epoch).
 func Unix(unixSeconds int64) (*Goment, error) {
+	log.Println("amey2")
 	t := time.Unix(unixSeconds, 0)
 	return createGoment(t)
 }
